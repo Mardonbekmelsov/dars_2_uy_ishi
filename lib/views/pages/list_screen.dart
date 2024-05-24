@@ -6,11 +6,8 @@ class ListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('List View')),
-      body: ListView(
-        children: [
-	for(var i = 0; i < 1000; i++)
- 	   ItemWidget(index: i),
-        ],
+      body: ListView.builder(
+      itemCount: 1000, itemBuilder: (context, index){ItemWidget(index: index);},
       ),
     );
   }
